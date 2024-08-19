@@ -19,7 +19,7 @@ func GenerateToken(payload sqlc.User) (string, error) {
 		exp = time.Hour * 1
 	}
 	tokenJwtTemp := jwt.NewWithClaims(jwt.SigningMethodHS256, dto.NewUserClaims(payload.ID, payload.Role, exp))
-	tokenJwt, err := tokenJwtTemp.SignedString([]byte(os.Getenv("secret_key")))
+	tokenJwt, err := tokenJwtTemp.SignedString([]byte(os.Getenv("JWT_SECRET_KEY")))
 	if err != nil {
 		return "", err
 	}

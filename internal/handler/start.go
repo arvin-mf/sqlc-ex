@@ -22,6 +22,9 @@ func InitHandler(db *sql.DB) *UserHandler {
 	userRepo := repository.NewUserRepository(queries)
 	userServ := service.NewUserService(userRepo)
 	userHand := NewUserHandler(userServ)
+
+	transactionRepo := 
+	
 	return userHand
 }
 
