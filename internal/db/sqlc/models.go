@@ -8,6 +8,12 @@ import (
 	"database/sql"
 )
 
+type Transaction struct {
+	ID       string
+	UserID   string
+	Descript sql.NullString
+}
+
 type User struct {
 	ID       string
 	Email    string
